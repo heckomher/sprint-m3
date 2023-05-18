@@ -81,7 +81,7 @@ VALUES
     ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
     ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
 
-INSERT INTO productos (nombre, categoría, precio, color, stock_local)
+INSERT INTO productos (nombre, categoria, precio, color, stock_local)
 VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Samsung Galaxy Z Flip 4', 'Celulares', '680000', 'Negro', '8'),
        ('Xiaomi Black Shark 5 Pro', 'Celulares', '600000', 'Negro', '6'),
