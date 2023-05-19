@@ -121,3 +121,16 @@ HAVING stock_local = (
     SELECT MAX(stock_local)
         FROM productos
 );
+
+-- Qué color de producto es más común en nuestra tienda.
+SELECT color
+FROM productos
+GROUP BY color
+HAVING COUNT(*) = (
+    SELECT MAX(total_productos)
+    FROM (
+        SELECT color, COUNT(*) AS total_productos
+        FROM productos
+        GROUP BY color
+    ) AS subquery
+);
