@@ -120,6 +120,7 @@ INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`
 INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('8', '3', '8');
 INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('3', '1', '18');
 INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('4', '1', '7');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('9', '5', '10');
 
 
 
