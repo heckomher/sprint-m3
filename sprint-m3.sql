@@ -72,3 +72,11 @@ VALUES ('Juan', 'Pérez', 'Calle 123, La Serena'),
        ('Pedro', 'Rodríguez', 'Calle Secundaria 789, Antofagasta'),
        ('Ana', 'López', 'Calle Principal 321, Puerto Montt'),
        ('Luis', 'Martínez', 'Avenida Central 654, Iquique');
+       
+INSERT INTO proveedores (rep_legal, nom_corporativo, email, categoria) 
+VALUES
+    ('Juan Pérez', 'Celulares Pérez', 'juan.perez@celularezperez.cl', 'Celulares'),
+    ('Mei Yuan Xi', 'Todo China', 'maria.rodriguez@36984.com', 'Accesorios'),
+    ('Pedro Gómez', 'MiCompu.cl', 'p.gomez@micompu.cl', 'Computadores'),
+    ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
+    ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
