@@ -5,7 +5,7 @@ CREATE DATABASE sprintm3;
 CREATE USER 'sprinter'@'localhost' IDENTIFIED BY 'P4ssw0rd_2023';
 
 -- Dar priviliegio a usuario creado
-GRANT ALL PRIVILEGES ON 'sprintm3' TO 'sprinter'@'localhost';
+GRANT ALL PRIVILEGES ON sprintm3.* TO 'sprinter'@'localhost';
 
 -- Creación de tabla clientes
 CREATE TABLE IF NOT EXISTS clientes (
@@ -95,10 +95,18 @@ VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Notebook Lenovo', 'Notebook', '350000', 'Negro', '4'),
        ('Notebook HP', 'Notebook', '550000', 'Negro', '6'),
        ('Notebook Asus', 'Notebook', '480000', 'Negro', '3'),
-       ('Macbook Lenovo', 'Notebook', '800000', 'Negro', '4'),
+       ('Macbook Apple', 'Notebook', '800000', 'Space Gray', '4'),
        ('Cámara EOS Rebel T100', 'Cámara', '450000', 'Negro', '2'),
        ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5');
 
+-- Carga de datos de las ventas realizadas
+INSERT INTO cliente_producto (fk_producto, fk_cliente, cantidad)
+VALUES
+(5, 2, 2),
+(8 ,3, 3),
+(1, 1, 2),
+(10, 4, 1),
+(6, 2, 5);
 -- carga de tabla relacion producto_proveedor 
 INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('1', '1', '15');
 INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('10', '2', '30');
@@ -148,3 +156,4 @@ HAVING COUNT(*) = (
         GROUP BY color
     ) AS subquery
 );
+
