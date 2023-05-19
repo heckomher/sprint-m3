@@ -95,7 +95,7 @@ VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Notebook Lenovo', 'Notebook', '350000', 'Negro', '4'),
        ('Notebook HP', 'Notebook', '550000', 'Negro', '6'),
        ('Notebook Asus', 'Notebook', '480000', 'Negro', '3'),
-       ('Macbook Lenovo', 'Notebook', '800000', 'Negro', '4'),
+       ('Macbook Apple', 'Notebook', '800000', 'Space Gray', '4'),
        ('Cámara EOS Rebel T100', 'Cámara', '450000', 'Negro', '2'),
        ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5');
 
