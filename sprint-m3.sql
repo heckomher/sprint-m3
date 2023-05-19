@@ -157,3 +157,8 @@ HAVING COUNT(*) = (
     ) AS subquery
 );
 
+-- Cambien la categoría de productos más popular por ‘Electrónica y computación’.
+UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '5');
+UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '6');
+UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '7');
+UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '8');
