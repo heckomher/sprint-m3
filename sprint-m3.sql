@@ -5,7 +5,7 @@ CREATE DATABASE sprintm3;
 CREATE USER 'sprinter'@'localhost' IDENTIFIED BY 'P4ssw0rd_2023';
 
 -- Dar priviliegio a usuario creado
-GRANT ALL PRIVILEGES ON 'sprintm3' TO 'sprinter'@'localhost';
+GRANT ALL PRIVILEGES ON sprintm3.* TO 'sprinter'@'localhost';
 
 -- Creación de tabla clientes
 CREATE TABLE IF NOT EXISTS clientes (
@@ -141,3 +141,4 @@ HAVING COUNT(*) = (
         GROUP BY color
     ) AS subquery
 );
+
