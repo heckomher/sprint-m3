@@ -83,7 +83,7 @@ VALUES
     ('Juan Pérez', 'Celulares Pérez', 'juan.perez@celularezperez.cl', 'Celulares'),
     ('Mei Yuan Xi', 'Todo China', 'maria.rodriguez@36984.com', 'Accesorios'),
     ('Pedro Gómez', 'MiCompu.cl', 'p.gomez@micompu.cl', 'Computadores'),
-    ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
+    ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Celulares'),
     ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
 
 -- Carga de información de productos
