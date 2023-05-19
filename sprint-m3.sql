@@ -81,6 +81,18 @@ VALUES
     ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
     ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
 
+INSERT INTO productos (nombre, categoria, precio, color, stock_local)
+VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
+       ('Samsung Galaxy Z Flip 4', 'Celulares', '680000', 'Negro', '8'),
+       ('Xiaomi Black Shark 5 Pro', 'Celulares', '600000', 'Negro', '6'),
+       ('Huawei Nova 10', 'Celulares', '500000', 'Blanco', '7'),
+       ('Notebook Lenovo', 'Notebook', '350000', 'Negro', '4'),
+       ('Notebook HP', 'Notebook', '550000', 'Negro', '6'),
+       ('Notebook Asus', 'Notebook', '480000', 'Negro', '3'),
+       ('Macbook Lenovo', 'Notebook', '800000', 'Negro', '4'),
+       ('Cámara EOS Rebel T100', 'Cámara', '450000', 'Negro', '2'),
+       ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5'),
+
 
 
 
