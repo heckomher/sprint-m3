@@ -99,6 +99,20 @@ VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Cámara EOS Rebel T100', 'Cámara', '450000', 'Negro', '2'),
        ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5');
 
+-- carga de tabla relacion producto_proveedor 
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('1', '1', '15');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('10', '2', '30');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('7', '3', '18');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('2', '4', '22');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('3', '2', '35');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('5', '3', '15');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('3', '5', '29');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('4', '4', '10');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('1', '5', '24');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('8', '3', '8');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('3', '1', '18');
+INSERT INTO producto_proveedor (`fk_producto`, `fk_proveedor`, `stock_proveedor`) VALUES ('4', '1', '7');
+
 
 
 -- Cuál es la categoría de productos que más se repite.
