@@ -95,9 +95,6 @@ VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
 
 
 
-
-
-
 -- Cuál es la categoría de productos que más se repite.
 SELECT  categoria, COUNT(*) AS total_productos
 FROM productos
