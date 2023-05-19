@@ -1,3 +1,6 @@
+-- link MER: https://miro.com/app/board/uXjVMH5HdKE=/
+
+
 -- Creación de base de daatos
 CREATE DATABASE sprintm3;
 
