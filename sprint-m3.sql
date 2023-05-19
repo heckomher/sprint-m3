@@ -31,6 +31,27 @@ CREATE TABLE IF NOT EXISTS contacto_proveedor(
 
 );
 
+CREATE TABLE IF NOT EXISTS productos(
+	id integer PRIMARY KEY AUTO_INCREMENT,
+    nombre varchar(60) not null,
+    categoria varchar(60) ,
+    precio integer default 0 ,
+    color varchar(60) ,
+    stock_local integer default 0
+);
+
+CREATE TABLE IF NOT EXISTS producto_proveedor(
+	fk_producto integer ,
+    fk_proveedor integer ,
+    stock_proveedor integer default 0,
+    
+    CONSTRAINT pk_key_prod_proveedor primary key( fk_producto , fk_proveedor) ,
+    constraint fk_proveedor foreign key (fk_proveedor) references proveedores(id) ,
+    constraint fk_producto foreign key (fk_producto) references productos(id) 
+
+);
+
+
 
 INSERT INTO clientes (nombre, apellido, direccion)
 VALUES ('Juan', 'Pérez', 'Calle 123, La Serena'),
