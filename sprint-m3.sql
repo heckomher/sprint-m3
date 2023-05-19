@@ -5,9 +5,10 @@ CREATE USER 'sprinter'@'localhost' IDENTIFIED BY 'P4ssw0rd_2023';
 GRANT ALL PRIVILEGES ON 'sprintm3' TO 'sprinter'@'localhost';
 
 CREATE TABLE IF NOT EXISTS clientes (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(100),
-  direccion VARCHAR(200),
+  apellido VARCHAR(100),
+  direccion VARCHAR(200)
  );
  
 CREATE  TABLE IF NOT EXISTS proveedores (
