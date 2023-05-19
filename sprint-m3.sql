@@ -1,16 +1,21 @@
+-- Creación de base de daatos
 CREATE DATABASE sprintm3;
 
+--Creación de usuario
 CREATE USER 'sprinter'@'localhost' IDENTIFIED BY 'P4ssw0rd_2023';
 
+-- Dar priviliegio a usuario creado
 GRANT ALL PRIVILEGES ON 'sprintm3' TO 'sprinter'@'localhost';
 
+-- Creación de tabla clientes
 CREATE TABLE IF NOT EXISTS clientes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(100),
   apellido VARCHAR(100),
   direccion VARCHAR(200)
  );
- 
+
+--Creación de tabla proveedores
 CREATE  TABLE IF NOT EXISTS proveedores (
 
 	id integer PRIMARY KEY AUTO_INCREMENT,
@@ -18,10 +23,9 @@ CREATE  TABLE IF NOT EXISTS proveedores (
     nom_corporativo varchar(100) not null,
     email varchar(60) not null,
     categoria varchar(60)
-    
 );
 
-
+--Creación de tabla de contactos
 CREATE TABLE IF NOT EXISTS contacto_proveedor(
 	fk_proveedor integer ,
     numero integer,
@@ -29,9 +33,9 @@ CREATE TABLE IF NOT EXISTS contacto_proveedor(
     
     CONSTRAINT pk_key_contacto primary key(fk_proveedor , numero),
     CONSTRAINT fk_contacto_proveedor foreign key (fk_proveedor) references proveedores(id) 
-
 );
 
+--Creación de tabla productos
 CREATE TABLE IF NOT EXISTS productos(
 	id integer PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(60) not null,
@@ -41,6 +45,7 @@ CREATE TABLE IF NOT EXISTS productos(
     stock_local integer default 0
 );
 
+-- Creación de tabla intermedia Producto_Poveedor
 CREATE TABLE IF NOT EXISTS producto_proveedor( -- producto -  proveedor ( proveedor avisa su stock reservado disponible para telovendo)
 	fk_producto integer ,
     fk_proveedor integer ,
@@ -52,6 +57,7 @@ CREATE TABLE IF NOT EXISTS producto_proveedor( -- producto -  proveedor ( provee
 
 );
 
+-- Creación de tabla intermedia cliente_producto
 CREATE TABLE IF NOT EXISTS cliente_producto( -- cliente compra producto
 	fk_producto integer ,
     fk_cliente integer ,
@@ -61,18 +67,17 @@ CREATE TABLE IF NOT EXISTS cliente_producto( -- cliente compra producto
     CONSTRAINT pk_keycompra primary key( fk_producto , fk_cliente , fecha_hora) ,
     constraint fk_cliente2 foreign key (fk_cliente) references clientes(id) ,
     constraint fk_producto2 foreign key (fk_producto) references productos(id) 
-
 );
 
-
-
+-- Carga de información de Clientes
 INSERT INTO clientes (nombre, apellido, direccion)
 VALUES ('Juan', 'Pérez', 'Calle 123, La Serena'),
        ('María', 'García', 'Avenida Principal 456, Santiago'),
        ('Pedro', 'Rodríguez', 'Calle Secundaria 789, Antofagasta'),
        ('Ana', 'López', 'Calle Principal 321, Puerto Montt'),
        ('Luis', 'Martínez', 'Avenida Central 654, Iquique');
-       
+
+-- Carga de información de proveedores 
 INSERT INTO proveedores (rep_legal, nom_corporativo, email, categoria) 
 VALUES
     ('Juan Pérez', 'Celulares Pérez', 'juan.perez@celularezperez.cl', 'Celulares'),
@@ -81,6 +86,7 @@ VALUES
     ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
     ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
 
+-- Carga de información de productos
 INSERT INTO productos (nombre, categoria, precio, color, stock_local)
 VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Samsung Galaxy Z Flip 4', 'Celulares', '680000', 'Negro', '8'),
@@ -91,8 +97,7 @@ VALUES ('Iphone 13', 'Celulares', '700000', 'Blanco', '10'),
        ('Notebook Asus', 'Notebook', '480000', 'Negro', '3'),
        ('Macbook Lenovo', 'Notebook', '800000', 'Negro', '4'),
        ('Cámara EOS Rebel T100', 'Cámara', '450000', 'Negro', '2'),
-       ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5'),
-
+       ('Bolso Cámara EOS Rebel', 'Accesorio', '20000', 'Negro', '5');
 
 
 -- Cuál es la categoría de productos que más se repite.
