@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS cliente_producto( -- cliente compra producto
     fecha_hora timestamp default now(),
     
     CONSTRAINT pk_keycompra primary key( fk_producto , fk_cliente , fecha_hora) ,
-    constraint fk_cliente foreign key (fk_cliente) references clientes(id) ,
-    constraint fk_producto foreign key (fk_producto) references productos(id) 
+    constraint fk_cliente2 foreign key (fk_cliente) references clientes(id) ,
+    constraint fk_producto2 foreign key (fk_producto) references productos(id) 
 
 );
 
