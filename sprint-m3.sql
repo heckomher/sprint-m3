@@ -142,8 +142,30 @@ HAVING COUNT(*) = (
     ) AS subquery
 );
 
+-- Seleccionar Cual o cuales son los proveedores con menor stock de productos. 
+SELECT pr.rep_legal, pr.nom_corporativo, p.nombre, p.stock_local
+FROM proveedores pr
+JOIN producto_proveedor pp ON pr.id = pp.fk_proveedor
+JOIN productos p ON pp.fk_producto = p.id
+WHERE p.stock_local = (
+    SELECT MIN(stock_local)
+    FROM productos
+)
+
+
 -- Cambien la categoría de productos más popular por ‘Electrónica y computación’.
-UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '5');
-UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '6');
-UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '7');
-UPDATE `sprintm3`.`productos` SET `categoria` = 'Electronica y Computación' WHERE (`id` = '8');
+    -- Primero obtener la categoría más vendida
+    SET @categoria_mas_vendida := (
+        SELECT p.categoria
+        FROM cliente_producto cp
+        JOIN productos p ON cp.fk_producto = p.id
+        GROUP BY p.categoria
+        ORDER BY SUM(cp.cantidad) DESC
+        LIMIT 1
+    );
+
+    -- Segundo actualizar la categoría más vendida en la tabla "productos"
+    UPDATE productos
+    SET categoria = 'Electrónica y computación'
+    WHERE categoria = @categoria_mas_vendida;
+
