@@ -112,3 +112,11 @@ HAVING COUNT(*) = (
         GROUP BY categoria
     ) AS subquery
 );
+
+-- Cuales son los productos con mayor stock 
+SELECT  nombre, stock_local
+FROM productos
+HAVING stock_local = (
+    SELECT MAX(stock_local)
+        FROM productos
+);
