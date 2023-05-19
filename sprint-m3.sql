@@ -80,3 +80,21 @@ VALUES
     ('Pedro Gómez', 'MiCompu.cl', 'p.gomez@micompu.cl', 'Computadores'),
     ('Luisa López', 'Yo lo Tengo', 'llopez@yolotengo.com', 'Piezas de PC'),
     ('Carlos Fernández', 'Camaras Carlos Fernandez EIRL', 'carlos.fernandez@gmail.com', 'Cámaras');
+
+
+
+
+
+
+-- Cuál es la categoría de productos que más se repite.
+SELECT  categoria, COUNT(*) AS total_productos
+FROM productos
+GROUP BY categoria
+HAVING COUNT(*) = (
+    SELECT MAX(total_productos)
+    FROM (
+        SELECT categoria, COUNT(*) AS total_productos
+        FROM productos
+        GROUP BY categoria
+    ) AS subquery
+);
