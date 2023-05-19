@@ -41,13 +41,25 @@ CREATE TABLE IF NOT EXISTS productos(
     stock_local integer default 0
 );
 
-CREATE TABLE IF NOT EXISTS producto_proveedor(
+CREATE TABLE IF NOT EXISTS producto_proveedor( -- producto -  proveedor ( proveedor avisa su stock reservado disponible para telovendo)
 	fk_producto integer ,
     fk_proveedor integer ,
     stock_proveedor integer default 0,
     
     CONSTRAINT pk_key_prod_proveedor primary key( fk_producto , fk_proveedor) ,
     constraint fk_proveedor foreign key (fk_proveedor) references proveedores(id) ,
+    constraint fk_producto foreign key (fk_producto) references productos(id) 
+
+);
+
+CREATE TABLE IF NOT EXISTS cliente_producto( -- cliente compra producto
+	fk_producto integer ,
+    fk_cliente integer ,
+    cantidad integer default 1 , 
+    fecha_hora timestamp default now(),
+    
+    CONSTRAINT pk_keycompra primary key( fk_producto , fk_cliente , fecha_hora) ,
+    constraint fk_cliente foreign key (fk_cliente) references clientes(id) ,
     constraint fk_producto foreign key (fk_producto) references productos(id) 
 
 );
